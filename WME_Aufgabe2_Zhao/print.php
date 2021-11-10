@@ -3,7 +3,7 @@
 <body>
 
 <?php
-echo "我的第3段 PHP 脚本！";
+echo "我的第4段 PHP 脚本！";
 ?>
 
 </body>
