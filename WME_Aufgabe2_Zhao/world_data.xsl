@@ -6,11 +6,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/">
         <html> 
             <head>
-                <meta charset="UTF-8">
+                <meta charset="UTF-8"></meta>
                 <title>World Data</title>
-                <link rel="stylesheet" href="reset.css">
-                <link href="style.css" type="text/css" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">   
+                <link rel="stylesheet" href="reset.css"></link>
+                <link href="style.css" type="text/css" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&amp;display=swap" rel="stylesheet"></link>   
                 <script src="https://kit.fontawesome.com/e62912c20d.js" crossorigin="anonymous"></script>
                 <script src="https://kit.fontawesome.com/070f0bbc07.js" crossorigin="anonymous"></script>
                 <script src="script.js"></script>
@@ -79,13 +79,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <div class="container">
                         <div class="left">
                             <p>
-                                Copyright &copy; 2021 world_data<br>
                                 First course exercise <strong>HTML, CSS and JS</strong> of the lecture Web and Multimedia Engineering.
                             </p>
                         </div>
                         <div class="right">
                             <p>
-                                This solution has been created by:<br>
+                                This solution has been created by:<br />
                                 Yiming Zhao(4905112)
                             </p>
                         </div>
