@@ -15,7 +15,7 @@ class WorldDataParser {
 		while (($csvData = fgetcsv($csvFile, 0, ",")) !== FALSE){
 			if ($currentRow==1){
 				for ($i=0; $i<$numberOfCategories; $i++){
-					$categrories[$i]=$csvData[$i];
+					$categories[$i]=$csvData[$i];
 				}
 				$currentRow++;
 			}
@@ -23,7 +23,7 @@ class WorldDataParser {
 			else{
 
 				for ($i=0; $i<$numberOfCategories; $i++){
-						 $arrayRow[$categrories[$i]]=$csvData[$i];
+						 $arrayRow[$categories[$i]]=$csvData[$i];
 					}
 
 				$dataArray[]=$arrayRow;
@@ -44,24 +44,24 @@ class WorldDataParser {
 			return false;
 		}
 
-		$xmlDocument = new DOMDocument('1.0', 'utf-8');
+		$xml = new DOMDocument('1.0', 'utf-8');
 
-		$xmlDocument->formatOutput = true;
-		$root = $xmlDocument->createElement('Countries');
-		$root = $xmlDocument->appendChild($root);
+		$xml->formatOutput = true;
+		$root = $xml->createElement('Countries');
+		$root = $xml->appendChild($root);
 
 		foreach ($dataArray as $key => $value) {
-			$country = $xmlDocument->createElement('Country');
+			$country = $xml->createElement('Country');
 			$country = $root->appendChild($country);
 
 			foreach ($value as $key2 => $value2) {
-				$categoryNode = $xmlDocument->createElement(strtok($key2, " "), rtrim($value2));
+				$categoryNode = $xml->createElement(strtok($key2, " "), rtrim($value2));
 				$country->appendChild($categoryNode);
 			}
 		}
 
-		$xmlDocument->save("./world_data.xml");
-		//var_dump($xmlDocument);
+		$xml->save("./world_data.xml");
+		//var_dump($xml);
 		return true; 
 	}
 
@@ -87,5 +87,3 @@ class WorldDataParser {
 	}
 
 }
-
-?>
