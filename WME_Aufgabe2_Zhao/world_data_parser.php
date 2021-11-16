@@ -47,8 +47,15 @@ class WorldDataParser{
         $dom->appendChild($countries);
        $dom->preserveWhiteSpace = false;
        $dom->formatOutput = true;
-       $dom->save("world_data.xml");
-        return true;
+
+
+        try{
+            $dom->save("world_data.xml");
+            return true;
+        } catch (Exception $e) {
+        return false;
+    }
+       
     }
     public function printXML($xmlPath, $xslPath) {
 
